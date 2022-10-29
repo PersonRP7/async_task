@@ -8,7 +8,7 @@ class Stream:
 
     def __init__(self, star_wars_url:str, pork_url:str) -> None:
         self.store_star_wars(star_wars_url)
-        self.pork_list(pork_url)
+        self.store_pork(pork_url)
 
     def store_star_wars(self, url:str) -> None:
         """
