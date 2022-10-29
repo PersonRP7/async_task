@@ -1,5 +1,6 @@
 import requests
 # https://swapi.dev/api/people
+# https://baconipsum.com/api/?type=meat-and-filler
 
 class Stream:
 
