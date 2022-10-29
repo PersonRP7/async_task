@@ -1,6 +1,8 @@
 import requests
 # https://swapi.dev/api/people
 # https://baconipsum.com/api/?type=meat-and-filler
+# Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
+# from streams import Stream
 
 class Stream:
 
@@ -23,13 +25,16 @@ class Stream:
             self.star_wars_list.append(i['name'])
 
     def store_pork(self, url:str)->None:
-        data = url
+        data = requests.get(url)
         data_json = data.json()
         for i in data_json:
             self.pork_list.append(url)
 
     def access(self):
         print(self.star_wars_list)
+
+    def get_pork(self):
+        print(self.pork_list)
     
         
 
