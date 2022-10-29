@@ -24,11 +24,17 @@ class Stream:
         for i in data_json['results']:
             self.star_wars_list.append(i['name'])
 
+    # def store_pork(self, url:str)->None:
+    #     data = requests.get(url)
+    #     data_json = data.json()
+    #     for i in data_json:
+    #         self.pork_list.append(i)
+
     def store_pork(self, url:str)->None:
         data = requests.get(url)
         data_json = data.json()
         for i in data_json:
-            self.pork_list.append(url)
+            self.pork_list.append(i)
 
     def access(self):
         print(self.star_wars_list)
