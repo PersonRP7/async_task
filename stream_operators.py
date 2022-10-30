@@ -34,6 +34,9 @@ class StreamOperators:
 
     @staticmethod
     def vowel_comparison(**kwargs) ->None:
+        """
+        Relies on counter_general for looping
+        """
         vowel_data = {}
         for key, value in kwargs.items():
             vowel_data[key] = StreamOperators.counter_general(value)
