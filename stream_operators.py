@@ -39,11 +39,16 @@ class StreamOperators:
     #Indentation on 22?
     @staticmethod
     def length_comparison(**kwargs):
+        """
+        Example: StreamOperators.length_comparison(sw = star_wars, p = pork)
+        Where sw and p are Stream class attributes in the form a flat list.
+        """
         length_data = {}
         for key, value in kwargs.items():
             length_data[key] = len(value)
             print(f"{key} : {len(value)}")
-        print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has more items.")
+        # print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has more items.")
+        print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has the most items.")
             
 
 
