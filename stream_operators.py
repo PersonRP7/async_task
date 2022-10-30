@@ -20,6 +20,10 @@ class StreamOperators:
 
     @staticmethod
     def counter_general(ls:list) ->int:
+        """
+        Not to be used by itself. Used by vowel_comparison
+        as a filter function.
+        """
         count = 0
         for item in ls:
             for letter in item:
