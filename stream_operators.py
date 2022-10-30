@@ -31,10 +31,7 @@ class StreamOperators:
                     if letter in StreamOperators.vowels:
                         vowel_data[key] = [letter]
         print(vowel_data)
-                # print(letter)
-                # if letter in StreamOperators.vowels:
-                #     vowel_data[key] = [letter]
-        # print(vowel_data)
+
 
 # StreamOperators.length_comparison(sw = star_wars, p = pork)
 StreamOperators.vowel_comparison(sw = star_wars, p = pork)
