@@ -28,12 +28,6 @@ def counter(ls):
                 count += 1
     return count
 
-# print(counter(star_wars))
-# print(counter(pork))
-
-# def many_counter(**kwargs):
-#     for key, value in kwargs.items():
-#         print(f"{key} : {counter(value)}")
 
 def many_counter(**kwargs):
     vowel_data = {}
