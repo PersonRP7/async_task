@@ -23,6 +23,10 @@ class TestStreams(unittest.TestCase):
     def test_star_wars_list_populated(self):
         stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
         self.assertGreater(len(stream.star_wars_list), 0)
+    
+    def test_pork_list_populated(self):
+        stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
+        self.assertGreater(len(stream.pork_list), 0)
 
 if __name__ == '__main__':
     unittest.main()
