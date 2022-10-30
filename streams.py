@@ -27,16 +27,23 @@ class Stream:
             self.star_wars_list.append(i['name'])
 
     def store_pork(self, url:str)->None:
+        """
+        Stores pork in pork_list
+        """
         data = requests.get(url)
         data_json = data.json()
         for i in data_json:
             self.pork_list.append(i)
 
-    def access(self):
-        print(self.star_wars_list)
+    def list_getter(self, list_name):
+        # return self.list_name
+        return getattr(self, list_name)
 
-    def get_pork(self):
-        print(self.pork_list)
+    # def access(self):
+    #     print(self.star_wars_list)
+
+    # def get_pork(self):
+    #     print(self.pork_list)
     
         
 
