@@ -28,7 +28,7 @@ class StreamOperators:
         return count
 
     @staticmethod
-    def vowel_comparison(**kwargs):
+    def vowel_comparison(**kwargs) ->None:
         vowel_data = {}
         for key, value in kwargs.items():
             vowel_data[key] = StreamOperators.counter_general(value)
@@ -38,7 +38,7 @@ class StreamOperators:
 
     #Indentation on 22?
     @staticmethod
-    def length_comparison(**kwargs):
+    def length_comparison(**kwargs)->None:
         """
         Example: StreamOperators.length_comparison(sw = star_wars, p = pork)
         Where sw and p are Stream class attributes in the form a flat list.
