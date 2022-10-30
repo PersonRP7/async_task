@@ -26,6 +26,10 @@ class TestStreamOperators(unittest.TestCase):
         response = StreamOperators.length_comparison(sw = self.star_wars, p = self.pork)
         self.assertEqual(response, None)
 
+    def test_counter_general_returns_integer_one(self):
+        ls = ["a"]
+        response = StreamOperators.counter_general(ls)
+        self.assertEqual(response, 1)
 
 if __name__ == '__main__':
     unittest.main()
