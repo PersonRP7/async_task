@@ -35,15 +35,10 @@ class Stream:
         for i in data_json:
             self.pork_list.append(i)
 
-    def list_getter(self, list_name):
+    def list_getter(self, list_name) -> list:
         # return self.list_name
         return getattr(self, list_name)
 
-    # def access(self):
-    #     print(self.star_wars_list)
-
-    # def get_pork(self):
-    #     print(self.pork_list)
     
         
 
