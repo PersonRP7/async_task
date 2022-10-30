@@ -1,6 +1,6 @@
 # max(d.items(), key=operator.itemgetter(1))[0]
 
-from async_task.word import pork_data
+# from async_task.word import pork_data
 import operator
 
 #
@@ -47,5 +47,5 @@ class StreamOperators:
             
 
 
-# StreamOperators.length_comparison(sw = star_wars, p = pork)
-# StreamOperators.vowel_comparison(sw = star_wars, p = pork)
+StreamOperators.length_comparison(sw = star_wars, p = pork)
+StreamOperators.vowel_comparison(sw = star_wars, p = pork)
