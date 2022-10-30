@@ -22,6 +22,10 @@ class TestStreamOperators(unittest.TestCase):
         response = StreamOperators.vowel_comparison(sw = self.star_wars, p = self.pork)
         self.assertEqual(response, None)
 
+    def test_length_comparison_returns_none(self):
+        response = StreamOperators.length_comparison(sw = self.star_wars, p = self.pork)
+        self.assertEqual(response, None)
+
 
 if __name__ == '__main__':
     unittest.main()
