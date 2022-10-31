@@ -17,6 +17,7 @@ class Stream:
         stream_list = stream.split()
         return stream_list
 
+
 # print(Stream.stream_to_list(Stream.lorem))
 # print(Stream.stream_to_list(Stream.pirate))
 
