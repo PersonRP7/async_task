@@ -25,13 +25,31 @@ class StreamOperators:
     #     for i in range(1):
     #         print('-'.join(random.sample(lorem, random.randint(1,len(lorem)))))
 
+    # @staticmethod
+    # def skewer_looper(base_string:str, data_set:str)->None:
+    #     for i in range(1):
+    #         base_string += '-'.join(random.sample(data_set, random.randint(1,len(data_set))))
+
+    # @staticmethod
+    # def skewer(lorem:str, pirate:str)->dict:
+    #     lorem_skewer = ""
+    #     pirate_skewer = ""
+    #     StreamOperators.skewer_looper(lorem_skewer, lorem)
+    #     StreamOperators.skewer_looper(lorem_skewer, pirate)
+    #     print(lorem_skewer)
+    #     print(pirate_skewer)
+
     @staticmethod
     def skewer(lorem:str, pirate:str)->dict:
         lorem_skewer = ""
         pirate_skewer = ""
         for i in range(1):
             lorem_skewer += '-'.join(random.sample(lorem, random.randint(1,len(lorem))))
+            pirate_skewer += '-'.join(random.sample(pirate, random.randint(1,len(pirate))))
+        print("\n")
         print(lorem_skewer)
+        print("\n")
+        print(pirate_skewer)
 
 
 StreamOperators.skewer(
