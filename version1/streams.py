@@ -15,6 +15,12 @@ class Stream:
         self.store_star_wars(star_wars_url)
         self.store_pork(pork_url)
 
+    def remove_whitespace(self, data_list:list)->list:
+        """
+        Removes all whitespace for any given string in a given list.
+        """
+        return [item.replace(' ', '') for item in data_list]
+
     def store_star_wars(self, url:str) -> None:
         """
         https://swapi.dev/api/people 
@@ -25,7 +31,7 @@ class Stream:
         data_json = data.json()
         for i in data_json['results']:
             self.star_wars_list.append(i['name'])
-        self.star_wars_list = [item.replace(' ', '') for item in self.star_wars_list]
+        self.star_wars_list = self.remove_whitespace(self.star_wars_list)
 
 
     def store_pork(self, url:str)->None:
@@ -36,7 +42,7 @@ class Stream:
         data_json = data.json()
         for i in data_json:
             self.pork_list.append(i)
-        self.pork_list = [item.replace(' ', '') for item in self.pork_list]
+        self.pork_list = self.remove_whitespace(self.pork_list)
 
     def list_getter(self, list_name) -> list:
         # return self.list_name
