@@ -43,6 +43,10 @@ class TestStreamOperators(unittest.TestCase):
         response = StreamOperators.count_repeat(word, "w", 2)
         self.assertEqual(response, False)
 
+    def test_skewer_returns_string(self):
+        response = StreamOperators.skewer(sw = self.star_wars, p = self.pork)
+        self.assertEqual(type(response), str)
+
 
 if __name__ == '__main__':
     unittest.main()
