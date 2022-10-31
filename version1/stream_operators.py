@@ -44,7 +44,6 @@ class StreamOperators:
         print(f"{max(vowel_data.items(), key=operator.itemgetter(1))[0]} has the most vowels.")
 
 
-    #Indentation on 22?
     @staticmethod
     def length_comparison(**kwargs)->None:
         """
