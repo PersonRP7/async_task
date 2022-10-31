@@ -1,9 +1,8 @@
 # max(d.items(), key=operator.itemgetter(1))[0]
 
-# from async_task.word import pork_data
 import operator
 from collections import defaultdict
-
+import random
 #
 from streams import Stream
 base_stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
@@ -78,6 +77,16 @@ class StreamOperators:
                     repeated_letter_words[key].append(item)
         return repeated_letter_words
 
+    @staticmethod
+    def skewer(**kwargs:list):
+        skewer_data = {}
+        for key, value in kwargs.items():
+            for item in value:
+                skewer_data[key] = '-'.join(random.sample(value, random.randint(1,len(value))))
+        return skewer_data
+
 # StreamOperators.length_comparison(sw = star_wars, p = pork)
 # StreamOperators.vowel_comparison(sw = star_wars, p = pork)
-print(StreamOperators.counter_more_than("r", 2, sw = star_wars, p = pork))
+# print(StreamOperators.counter_more_than("r", 2, sw = star_wars, p = pork))
+
+# print(StreamOperators.skewer(sw = star_wars, p = pork))
