@@ -26,6 +26,7 @@ class Stream:
         for i in data_json['results']:
             self.star_wars_list.append(i['name'])
 
+
     def store_pork(self, url:str)->None:
         """
         Stores pork in pork_list
@@ -34,14 +35,19 @@ class Stream:
         data_json = data.json()
         for i in data_json:
             self.pork_list.append(i)
+        self.pork_list = [item.replace(' ', '') for item in self.pork_list]
 
     def list_getter(self, list_name) -> list:
         # return self.list_name
         return getattr(self, list_name)
 
 
-    
-        
+
+# print(Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler").pork_list)
+
+# pl2 = [item.replace(' ', '') for item in pl]
+# print(pl2)
+
 
 
 
