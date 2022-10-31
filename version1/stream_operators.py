@@ -77,16 +77,28 @@ class StreamOperators:
                     repeated_letter_words[key].append(item)
         return repeated_letter_words
 
+    # @staticmethod
+    # def skewer(**kwargs:list):
+    #     skewer_data = {}
+    #     skewer_length_data = {}
+    #     for key, value in kwargs.items():
+    #         for item in value:
+    #             skewer_data[key] = '-'.join(random.sample(value, random.randint(1,len(value))))
+    #     return skewer_data
     @staticmethod
     def skewer(**kwargs:list):
         skewer_data = {}
+        skewer_length_data = {}
         for key, value in kwargs.items():
             for item in value:
                 skewer_data[key] = '-'.join(random.sample(value, random.randint(1,len(value))))
-        return skewer_data
+                skewer_length_data[key] = len('-'.join(random.sample(value, random.randint(1,len(value)))))
+        # return skewer_data
+        # return skewer_length_data
+        return f"{skewer_data} \n {max(skewer_length_data.items(), key=operator.itemgetter(1))[0]} has the longest skewer."
 
 # StreamOperators.length_comparison(sw = star_wars, p = pork)
 # StreamOperators.vowel_comparison(sw = star_wars, p = pork)
 # print(StreamOperators.counter_more_than("r", 2, sw = star_wars, p = pork))
 
-# print(StreamOperators.skewer(sw = star_wars, p = pork))
+print(StreamOperators.skewer(sw = star_wars, p = pork))

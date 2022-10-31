@@ -25,6 +25,7 @@ class Stream:
         data_json = data.json()
         for i in data_json['results']:
             self.star_wars_list.append(i['name'])
+        self.star_wars_list = [item.replace(' ', '') for item in self.star_wars_list]
 
 
     def store_pork(self, url:str)->None:
