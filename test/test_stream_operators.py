@@ -8,6 +8,7 @@ import unittest
 import requests
 from streams import Stream
 from stream_operators import StreamOperators
+from collections import defaultdict
 
 class TestStreamOperators(unittest.TestCase):
 
@@ -36,6 +37,12 @@ class TestStreamOperators(unittest.TestCase):
         word = "wword"
         response = StreamOperators.count_repeat(word, "w", 2)
         self.assertEqual(response, True)
+
+    def test_count_repeat_returns_false(self):
+        word = "word"
+        response = StreamOperators.count_repeat(word, "w", 2)
+        self.assertEqual(response, False)
+
 
 if __name__ == '__main__':
     unittest.main()
