@@ -1,4 +1,5 @@
 import sys
+
 sys.path += ['./']
 #Allows the tests to be run from the root directory, as python doesn't treat
 #the current working directory as a package.
@@ -30,6 +31,11 @@ class TestStreamOperators(unittest.TestCase):
         ls = ["a"]
         response = StreamOperators.counter_general(ls)
         self.assertEqual(response, 1)
+
+    def test_count_repeat_returns_true(self):
+        word = "wword"
+        response = StreamOperators.count_repeat(word, "w", 2)
+        self.assertEqual(response, True)
 
 if __name__ == '__main__':
     unittest.main()
