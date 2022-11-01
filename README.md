@@ -16,3 +16,10 @@ A class comprised of static methods performing various filtering tasks.
 
 #### stream_reporter
 Displays the data readout and sets the ordering of the filtering methods.
+
+### Testing
+Testing is implemented using the python standard library testing framework -- unittest.
+Tests can be run by ```cd```ing into the version1 directory and running the command:
+```
+py -m unittest
+```
