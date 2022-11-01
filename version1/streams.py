@@ -2,6 +2,10 @@
 # https://baconipsum.com/api/?type=meat-and-filler
 # Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
 # from streams import Stream
+# Stream("https://swapi.dev/api/people", 
+# "https://baconipsum.com/api/?type=meat-and-filler",
+#  "https://pokeapi.co/api/v2/pokemon"
+# )
 
 import requests
 from math import floor
@@ -11,10 +15,12 @@ class Stream:
 
     star_wars_list = []
     pork_list = []
+    pokemon_list = []
 
-    def __init__(self, star_wars_url:str, pork_url:str) -> None:
+    def __init__(self, star_wars_url:str, pork_url:str, pokemon_url:str) -> None:
         self.store_star_wars(star_wars_url)
         self.store_pork(pork_url)
+        self.store_pokemon(pokemon_url)
 
     def remove_whitespace(self, data_list:list)->list:
         """
@@ -53,6 +59,12 @@ class Stream:
         self.pork_list = self.remove_whitespace(self.pork_list)
         self.pork_list = self.reduce_list_size(self.pork_list)
 
+    def store_pokemon(self, url:str)->None:
+        data = requests.get(url)
+        data_json = data.json()
+        for i in data_json['results']:
+            self.pokemon_list.append(i['name'])
+
     def list_getter(self, list_name) -> list:
         # return self.list_name
         return getattr(self, list_name)
@@ -64,6 +76,10 @@ class Stream:
 # pl2 = [item.replace(' ', '') for item in pl]
 # print(pl2)
 
+# Stream("https://swapi.dev/api/people", 
+# "https://baconipsum.com/api/?type=meat-and-filler",
+#  "https://pokeapi.co/api/v2/pokemon"
+# ).pokemon_list
 
 
 

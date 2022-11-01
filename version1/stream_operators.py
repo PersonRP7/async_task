@@ -5,10 +5,18 @@ from collections import defaultdict
 import random
 #
 from streams import Stream
-base_stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
+# base_stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
+# star_wars = base_stream.list_getter("star_wars_list")
+# pork = base_stream.list_getter("pork_list")
+#
+
+base_stream = Stream("https://swapi.dev/api/people", 
+"https://baconipsum.com/api/?type=meat-and-filler",
+ "https://pokeapi.co/api/v2/pokemon"
+)
 star_wars = base_stream.list_getter("star_wars_list")
 pork = base_stream.list_getter("pork_list")
-#
+pokemon = base_stream.list_getter("pokemon_list")
 
 class StreamOperators:
 
@@ -124,8 +132,8 @@ class StreamOperators:
 
 # print(StreamOperators.skewer(sw = star_wars, p = pork))
 
-print(StreamOperators.length_comparison(sw = star_wars, p = pork))
-print(StreamOperators.vowel_comparison(sw = star_wars, p = pork))
-print(StreamOperators.counter_more_than("r", 2, sw = star_wars, p = pork))
+print(StreamOperators.length_comparison(sw = star_wars, p = pork, po = pokemon))
+print(StreamOperators.vowel_comparison(sw = star_wars, p = pork, po = pokemon))
+print(StreamOperators.counter_more_than("r", 2, sw = star_wars, p = pork, po = pokemon))
 
-print(StreamOperators.skewer(sw = star_wars, p = pork))
+# print(StreamOperators.skewer(sw = star_wars, p = pork, po = pokemon))

@@ -16,7 +16,11 @@ class TestStreams(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        base_stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
+        # base_stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
+        base_stream = Stream("https://swapi.dev/api/people", 
+        "https://baconipsum.com/api/?type=meat-and-filler",
+        "https://pokeapi.co/api/v2/pokemon"
+        )
         star_wars = base_stream.list_getter("star_wars_list")
         pork = base_stream.list_getter("pork_list")
 
@@ -31,6 +35,7 @@ class TestStreams(unittest.TestCase):
     def test_pork_reachable(self):
         response = requests.get("https://baconipsum.com/api/?type=meat-and-filler")
         self.assertEqual(response.status_code, 200)
+
 
     def test_star_wars_list_populated(self):
         
