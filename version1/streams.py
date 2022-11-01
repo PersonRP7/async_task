@@ -71,16 +71,6 @@ class Stream:
 
 
 
-# print(Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler").pork_list)
-
-# pl2 = [item.replace(' ', '') for item in pl]
-# print(pl2)
-
-# Stream("https://swapi.dev/api/people", 
-# "https://baconipsum.com/api/?type=meat-and-filler",
-#  "https://pokeapi.co/api/v2/pokemon"
-# ).pokemon_list
-
 
 
     
