@@ -4,6 +4,7 @@
 # from streams import Stream
 
 import requests
+from math import floor
 
 
 class Stream:
@@ -20,6 +21,13 @@ class Stream:
         Removes all whitespace for any given string in a given list.
         """
         return [item.replace(' ', '') for item in data_list]
+
+    def reduce_list_size(self, ls:list)->list:
+        """
+        Reduce list size to make it more visually
+        manageable. Relies on math.floor.
+        """
+        return ls[:floor(len(ls)/2)]
 
     def store_star_wars(self, url:str) -> None:
         """
@@ -43,6 +51,7 @@ class Stream:
         for i in data_json:
             self.pork_list.append(i)
         self.pork_list = self.remove_whitespace(self.pork_list)
+        self.pork_list = self.reduce_list_size(self.pork_list)
 
     def list_getter(self, list_name) -> list:
         # return self.list_name
