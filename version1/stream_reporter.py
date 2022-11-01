@@ -12,7 +12,6 @@ pokemon = base_stream.list_getter("pokemon_list")
 
 
 def send_error_email(error_traceback)->str:
-    # return f"Sending error email with {error_traceback}"
     print(f"Sending error email with {error_traceback}")
 
 
