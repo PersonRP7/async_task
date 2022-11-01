@@ -23,3 +23,8 @@ Tests can be run by ```cd```ing into the version1 directory and running the comm
 ```
 py -m unittest
 ```
+
+### Docker
+ -```cd``` into the root directory.
+ -```docker build -t async_task```
+ -```docker run async_task```
