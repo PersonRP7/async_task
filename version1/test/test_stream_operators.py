@@ -20,13 +20,13 @@ class TestStreamOperators(unittest.TestCase):
         cls.star_wars = star_wars
         cls.pork = pork
 
-    def test_vowel_comparison_returns_none(self):
+    def test_vowel_comparison_returns_str(self):
         response = StreamOperators.vowel_comparison(sw = self.star_wars, p = self.pork)
-        self.assertEqual(response, None)
+        self.assertEqual(type(response), str)
 
-    def test_length_comparison_returns_none(self):
+    def test_length_comparison_returns_str(self):
         response = StreamOperators.length_comparison(sw = self.star_wars, p = self.pork)
-        self.assertEqual(response, None)
+        self.assertEqual(type(response), str)
 
     def test_counter_general_returns_integer_one(self):
         ls = ["a"]

@@ -31,20 +31,43 @@ class StreamOperators:
                     count += 1
         return count
 
+    # @staticmethod
+    # def vowel_comparison(**kwargs) ->None:
+    #     """
+    #     Relies on counter_general for looping.
+    #     """
+    #     vowel_data = {}
+    #     for key, value in kwargs.items():
+    #         vowel_data[key] = StreamOperators.counter_general(value)
+    #     print(vowel_data)
+    #     print(f"{max(vowel_data.items(), key=operator.itemgetter(1))[0]} has the most vowels.")
     @staticmethod
-    def vowel_comparison(**kwargs) ->None:
+    def vowel_comparison(**kwargs) ->str:
         """
         Relies on counter_general for looping.
         """
         vowel_data = {}
         for key, value in kwargs.items():
             vowel_data[key] = StreamOperators.counter_general(value)
-        print(vowel_data)
-        print(f"{max(vowel_data.items(), key=operator.itemgetter(1))[0]} has the most vowels.")
+        # print(vowel_data)
+        return f"{vowel_data} \n {max(vowel_data.items(), key=operator.itemgetter(1))[0]} has the most vowels."
 
+
+    # @staticmethod
+    # def length_comparison(**kwargs)->str:
+    #     """
+    #     Example: StreamOperators.length_comparison(sw = star_wars, p = pork)
+    #     Where sw and p are Stream class attributes in the form a flat list.
+    #     """
+    #     length_data = {}
+    #     for key, value in kwargs.items():
+    #         length_data[key] = len(value)
+    #         print(f"{key} : {len(value)}")
+    #     # print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has more items.")
+    #     print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has the most items.")
 
     @staticmethod
-    def length_comparison(**kwargs)->None:
+    def length_comparison(**kwargs)->str:
         """
         Example: StreamOperators.length_comparison(sw = star_wars, p = pork)
         Where sw and p are Stream class attributes in the form a flat list.
@@ -54,7 +77,7 @@ class StreamOperators:
             length_data[key] = len(value)
             print(f"{key} : {len(value)}")
         # print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has more items.")
-        print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has the most items.")
+        return f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has the most items."
             
 
     @staticmethod
@@ -95,8 +118,14 @@ class StreamOperators:
 
         return f"{skewer_data} \n {max(skewer_length_data.items(), key=operator.itemgetter(1))[0]} has the longest skewer."
 
-StreamOperators.length_comparison(sw = star_wars, p = pork)
-StreamOperators.vowel_comparison(sw = star_wars, p = pork)
+# StreamOperators.length_comparison(sw = star_wars, p = pork)
+# StreamOperators.vowel_comparison(sw = star_wars, p = pork)
+# print(StreamOperators.counter_more_than("r", 2, sw = star_wars, p = pork))
+
+# print(StreamOperators.skewer(sw = star_wars, p = pork))
+
+print(StreamOperators.length_comparison(sw = star_wars, p = pork))
+print(StreamOperators.vowel_comparison(sw = star_wars, p = pork))
 print(StreamOperators.counter_more_than("r", 2, sw = star_wars, p = pork))
 
 print(StreamOperators.skewer(sw = star_wars, p = pork))
