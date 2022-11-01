@@ -1,6 +1,10 @@
 from streams import Stream
 from stream_operators import StreamOperators
 
+# import traceback
+# import logging
+
+
 base_stream = Stream("https://swapi.dev/api/people", 
 "https://baconipsum.com/api/?type=meat-and-filler",
  "https://pokeapi.co/api/v2/pokemon"
@@ -8,6 +12,19 @@ base_stream = Stream("https://swapi.dev/api/people",
 star_wars = base_stream.list_getter("star_wars_list")
 pork = base_stream.list_getter("pork_list")
 pokemon = base_stream.list_getter("pokemon_list")
+
+
+def send_error_email(error_traceback):
+    # return f"Sending error email with {error_traceback}"
+    print(f"Sending error email with {error_traceback}")
+
+
+def try_except_decorator(reporting_function):
+    try:
+        return reporting_function()
+    except Exception as e:
+        return send_error_email(e)
+
 
 def reporter()->None:
     print("LENGTH COMPARISON:")
@@ -24,5 +41,8 @@ def reporter()->None:
     print(StreamOperators.skewer(sw = star_wars, p = pork, po = pokemon))
 
 if __name__ == "__main__":
-    reporter()
+    try_except_decorator(reporter)
+
+
+
 
