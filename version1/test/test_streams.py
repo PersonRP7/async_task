@@ -6,6 +6,7 @@ sys.path += ['./']
 
 import unittest
 import requests
+from math import floor
 from streams import Stream
 
 
@@ -18,6 +19,8 @@ class TestStreams(unittest.TestCase):
         base_stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
         star_wars = base_stream.list_getter("star_wars_list")
         pork = base_stream.list_getter("pork_list")
+
+        cls.base_stream = base_stream
         cls.star_wars = star_wars
         cls.pork = pork
     
@@ -36,6 +39,11 @@ class TestStreams(unittest.TestCase):
     def test_pork_list_populated(self):
 
         self.assertGreater(len(self.pork), 0)
+
+    def test_reduce_list_size(self):
+        ls = [1, 2, 3, 4, 5]
+        ls_reduced = self.base_stream.reduce_list_size(ls)
+        self.assertEqual(len(ls_reduced), 2)
 
     
         
