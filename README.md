@@ -25,6 +25,6 @@ py -m unittest
 ```
 
 ### Docker
- -```cd``` into the root directory.
- -```docker build -t async_task```
- -```docker run async_task```
+- ```cd``` into the root directory.
+- ```docker build -t async_task```
+- ```docker run async_task```
