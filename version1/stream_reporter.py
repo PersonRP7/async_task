@@ -1,9 +1,6 @@
 from streams import Stream
 from stream_operators import StreamOperators
 
-# import traceback
-# import logging
-
 
 base_stream = Stream("https://swapi.dev/api/people", 
 "https://baconipsum.com/api/?type=meat-and-filler",
