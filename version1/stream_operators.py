@@ -52,24 +52,11 @@ class StreamOperators:
         return f"{vowel_data} \n {max(vowel_data.items(), key=operator.itemgetter(1))[0]} has the most vowels."
 
 
-    # @staticmethod
-    # def length_comparison(**kwargs)->str:
-    #     """
-    #     Example: StreamOperators.length_comparison(sw = star_wars, p = pork)
-    #     Where sw and p are Stream class attributes in the form a flat list.
-    #     """
-    #     length_data = {}
-    #     for key, value in kwargs.items():
-    #         length_data[key] = len(value)
-    #         print(f"{key} : {len(value)}")
-    #     # print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has more items.")
-    #     print(f"{max(length_data.items(), key=operator.itemgetter(1))[0]} has the most items.")
-
     @staticmethod
     def length_comparison(**kwargs)->str:
         """
-        Example: StreamOperators.length_comparison(sw = star_wars, p = pork)
-        Where sw and p are Stream class attributes in the form a flat list.
+        Example: StreamOperators.length_comparison(sw = star_wars, p = pork, po = pokemon)
+        Where sw, p and po are Stream class attributes in the form a flat list.
         """
         length_data = {}
         for key, value in kwargs.items():
@@ -103,9 +90,13 @@ class StreamOperators:
     @staticmethod
     def skewer(**kwargs:list)->str:
         """
-        base_stream = Stream("https://swapi.dev/api/people", "https://baconipsum.com/api/?type=meat-and-filler")
+        base_stream = Stream("https://swapi.dev/api/people", 
+        "https://baconipsum.com/api/?type=meat-and-filler",
+        "https://pokeapi.co/api/v2/pokemon"
+        )
         star_wars = base_stream.list_getter("star_wars_list")
         pork = base_stream.list_getter("pork_list")
+        pokemon = base_stream.list_getter("pokemon_list")
         Example: print(StreamOperators.skewer(sw = star_wars, p = pork))
         """
         skewer_data = {}
