@@ -11,12 +11,15 @@ pork = base_stream.list_getter("pork_list")
 pokemon = base_stream.list_getter("pokemon_list")
 
 
-def send_error_email(error_traceback):
+def send_error_email(error_traceback)->str:
     # return f"Sending error email with {error_traceback}"
     print(f"Sending error email with {error_traceback}")
 
 
 def try_except_decorator(reporting_function):
+    """
+    Catches any kind of Exception.
+    """
     try:
         return reporting_function()
     except Exception as e:
