@@ -39,16 +39,7 @@ class StreamOperators:
                     count += 1
         return count
 
-    # @staticmethod
-    # def vowel_comparison(**kwargs) ->None:
-    #     """
-    #     Relies on counter_general for looping.
-    #     """
-    #     vowel_data = {}
-    #     for key, value in kwargs.items():
-    #         vowel_data[key] = StreamOperators.counter_general(value)
-    #     print(vowel_data)
-    #     print(f"{max(vowel_data.items(), key=operator.itemgetter(1))[0]} has the most vowels.")
+    
     @staticmethod
     def vowel_comparison(**kwargs) ->str:
         """
